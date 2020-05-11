@@ -1,0 +1,115 @@
+{
+    "name": "Userge ft. Aria2",
+    "description": "telegram pluggable userbot vs Aria2",
+    "logo": "https://imgur.com/download/Inyeb1S",
+    "keywords": [
+        "userge",
+        "telegram",
+        "pluggable",
+        "userbot"
+    ],
+    "repository": "https://github.com/UsergeTeam/Userge",
+    "website": "https://github.com/Userge",
+    "success_url": "https://t.me/theUserge",
+    "env": {
+        "APP_ID": {
+            "description": "Get this value from https://my.telegram.org"
+        },
+        "API_HASH": {
+            "description": "Get this value from https://my.telegram.org"
+        },
+        "HU_STRING_SESSION": {
+            "description": "Get it by running `bash genStr` command or ignore this",
+            "required": false
+        },
+        "DATABASE_URL": {
+            "description": "Mongodb url from https://cloud.mongodb.com/"
+        },
+        "G_DRIVE_CLIENT_ID": {
+            "description": "Googel Drive API Keys from https://console.developers.google.com/"
+        },
+        "G_DRIVE_CLIENT_SECRET": {
+            "description": "Googel Drive API Keys from https://console.developers.google.com/"
+        },
+        "G_DRIVE_IS_TD": {
+            "description": "Set True if it is TeamDrive",
+            "value": "True"
+        },
+        "DOWN_PATH": {
+            "description": "Set name to your working directory",
+            "required": false
+        },
+        "PREFERRED_LANGUAGE": {
+            "description": "Your Languge ( ex: if english => 'en' )",
+            "required": false
+        },
+        "SCREENSHOT_API": {
+            "description": "get API key from 'https://screenshotlayer.com'",
+            "required": false
+
+        },
+        "CURRENCY_API": {
+            "description": "get API key from 'https://free.currencyconverterapi.com'",
+            "required": false
+
+        },
+        "G_DRIVE_PARENT_ID": {
+            "description": "GDrive Folder ID",
+            "required": false
+        },
+        "LOG_CHANNEL_ID": {
+            "description": "Telegram Log Channel ID",
+            "required": false
+        },
+        "HEROKU_APP_NAME": {
+            "description": "given app name to the heroku app",
+            "required": false
+        },
+        "HEROKU_API_KEY": {
+            "description": "get a Heroku API key from http://dashboard.heroku.com/account",
+            "required": false
+        },
+        "UPSTREAM_REPO": {
+            "description": "set this to your USERGE fork on GitHub",
+            "required": false
+        },
+        "SUDO_TRIGGER": {
+            "description": "set command prefix for SUDO users",
+            "required": false
+        },
+		"HEROKU_APP_NAME": {
+			"description": "This should be the same as \"App name\" above."
+		},
+		"ARIA2C_SECRET": {
+			"description": "Aria2c's secret",
+			"value": "DEFAULT_SECRET"
+		},
+		"RCLONE_CONFIG": {
+			"description": "Rclone config to mount in one line, replace line breaks with \"\\n\"",
+			"required": false
+		},
+		"RCLONE_DESTINATION": {
+			"description": "Path to store your file in your Rclone drive. Must start with a forward slash.",
+			"required": false
+		}      
+    },
+    "addons": [
+    ],
+    "buildpacks": [
+        {
+            "url": "https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest.git"
+        }, {
+            "url": "https://github.com/heroku/heroku-buildpack-apt.git"
+        }, {
+            "url": "heroku/python"
+        }, {
+			"url": "heroku/nodejs"
+		}
+    ],
+    "formation": {
+        "worker": {
+            "quantity": 1,
+            "size": "free"
+        }
+    }
+}
